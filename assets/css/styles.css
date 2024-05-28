@@ -1,0 +1,510 @@
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  background-image: url(../css/img/cancha.jpg);
+  background-color: #333;
+  margin: 0;
+  
+}
+
+.header__logo {
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: wheat;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  top: 0;
+}
+
+.navbar-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.header__logo a,
+.dropdown-secciones .dropbtn {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+.active {
+  color: #dffdff;
+}
+
+ 
+.navbar-items {
+  display: none;
+}
+
+
+.dropdown-secciones {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-secciones .dropbtn {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+
+.contenido-dropdown {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+.header__logo a:hover,
+.dropdown-secciones:hover .dropbtn {
+  background-color: #dffdff;
+  border-radius: 20px;
+}
+
+
+.dropdown-secciones:hover .contenido-navn {
+  display: block;
+}
+
+
+.header__isotipo {
+  padding: 0;
+  align-items: center;
+  display: flex;
+}
+
+.header__logo img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 80px;
+}
+
+
+.header__isotipo p {
+  display: none;
+}
+
+
+.header__logo i {
+  font-size: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+
+.menu-lateral {
+  display: none;
+}
+
+
+
+.contenedor {
+  display: flex;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.categoria__nombre {
+  background-color: rgb(94, 45, 45);
+  border-radius: 5px;
+  color: #fff8f875;
+  font-size: x-large;
+  font-weight: 800;
+  padding: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 1px white;
+  width: 100%;
+}
+
+.contendor__producto,
+.categoria {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.card__producto {
+  position: relative;
+  align-items: center;
+  border-radius: 20px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  height: 380px;
+  width: 170px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease both;
+}
+
+
+.card__producto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Definir la animación de entrada */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card__producto {
+  position: relative;
+}
+
+.card__producto img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 35%;
+  height: 55%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 80%;
+  border-radius: 20px;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card__producto:hover .overlay {
+  opacity: 1;
+}
+
+
+.card__producto img {
+  height: 25rem;
+  margin-bottom: 2rem;
+}
+
+.card__producto-nombre {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+  height: 1.8rem;
+  text-align: center;
+}
+
+.card__producto-nombre-imagen {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card__producto img {
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  height: 190px;
+  width: 90%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.precio-border {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0.8rem 0;
+  padding: 0.3rem;
+  position: relative;
+	z-index: 1;
+  overflow: hidden;
+}
+
+.precio-border::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(transparent, rgb(94, 45, 45), transparent 40%);
+  animation: rotate 2s linear infinite;
+}
+
+.precio-border::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  border-radius: 5px;
+}
+
+.social i {
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.social i:hover {
+  color: #90bede;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+.card__producto-precio {
+  background-color:rgb(94, 45, 45);
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+}
+
+.card__precio-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card__btn-comprar {
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.contendor__producto .paginas {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.paginas .pagina {
+  background-color: rgb(94, 45, 45);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: small;
+  text-decoration: none;
+  padding: 0.8rem 1.3rem;
+  margin: 1rem 0.3rem;
+}
+
+.pagina:hover {
+  color: rgb(255, 255, 255);
+}
+
+
+footer {
+  background-color:  rgb(0, 0, 0);
+  position: relative;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+  padding: 1rem;
+  color: #ffffff;
+}
+
+
+@media screen and (min-width: 576px) {
+  .header__logo {
+    margin: 0;
+  }
+
+  .header__logo #dropdown-icon {
+    display: none;
+  }
+
+  .header__isotipo {
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .header__isotipo img {
+    height: 10rem;
+    margin: 0 5rem;
+    width: 10rem;
+  }
+
+  .header__isotipo p {
+    font-size: xx-large;
+  }
+  
+  .header__isotipo p {
+    display: block;
+  }
+
+  .navbar-items {
+    display: flex;
+  }
+
+  .menu-lateral {
+    display: block;
+  }
+
+  .navbar-items {
+    align-items: flex-start;
+    background-color: rgb(94, 45, 45);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    min-height: calc(100% - 6rem);
+    padding: 3rem;
+    width: 150px;
+    line-height: 5rem;
+    color: wheat;
+  }
+
+  .menu-item {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: wheat;
+    font-size: x-large;
+    font-weight: bolder;
+    display: block; 
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .dropdown-container {
+    display: none;
+    flex-direction: column;
+    border-radius: 10px;
+    padding-left: 1.5rem;
+  }
+
+  .menu-item:hover{
+    color: #f9f9f9;
+  }
+
+  .categoria__nombre {
+    width: 90%;
+  }
+
+  .contendor__producto {
+    overflow-y: auto;
+    padding-left: 2rem;
+  }
+
+  .card__producto {
+    height: 45rem;
+    width: 22rem;
+    margin: 1rem;
+  }
+
+  #juguetes, #abrigos {
+    justify-content: flex-start;
+    margin-left: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .card__producto-nombre {
+    font-size: x-large;
+  }
+
+  .card__producto {
+    position: relative;
+  }
+
+  .card__producto img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 35%;
+    height: 60%;
+    background:  rgb(252, 164, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 90%;
+    border-radius: 20px;
+    transition: .5s ease;
+    opacity:0;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .card__producto:hover .overlay {
+    opacity: 1;
+  }
+
+  .card__producto img {
+    height: 25rem;
+    margin-bottom: 2rem;
+  }
+
+  .card__producto-precio {
+    padding: 1.5rem 4rem;
+    font-size: 1.5rem;
+  }
+
+  .card__btn-comprar {
+    padding: 1.5rem 3rem;
+  }
+
+  .social i {
+    font-size: 2rem;
+  }
+
+  .paginas .pagina {
+    background-color:  rgba(145, 72, 72, 0.836);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: x-large;
+    text-decoration: none;
+    padding:1rem 1.8rem;
+    margin: 1rem 0.3rem;
+  }
+}
